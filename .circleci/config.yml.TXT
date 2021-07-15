@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  newman: postman/newman@0.0.2
+jobs:
+  build:
+    executor: newman/postman-newman-docker
+    steps:
+      - checkout
+      - newman/newman-run:
+          collection: ./Runner_Qantas_Suite.postman_collection.json
+          environment: ./Runner_dev_test.postman_environment.json
+	  iteration-data: ./test_data

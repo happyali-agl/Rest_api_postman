@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "fcb15b24-1337-4174-8504-16e45b713dae",
+		"name": "Qantas_Suite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "current_weather_via_location",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resbody = JSON.parse(responseBody);\r",
+							"tests[\"status code\"]=responseCode.code===200;\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}?lat={{lat}}&lon={{lon}}&key={{master_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{lat}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{lon}}"
+						},
+						{
+							"key": "key",
+							"value": "{{master_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "current_weather_via_postcode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resbody = JSON.parse(responseBody);\r",
+							"tests[\"status code\"]=responseCode.code===200;\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}?postal_code={{postcode}}&key={{master_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "{{postcode}}"
+						},
+						{
+							"key": "key",
+							"value": "{{master_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		}
+	]
+}
