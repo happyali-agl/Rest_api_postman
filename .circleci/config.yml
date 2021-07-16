@@ -9,4 +9,4 @@ jobs:
       - newman/newman-run:
           collection: ./Runner_Qantas_Suite.postman_collection.json
           environment: ./Runner_dev_test.postman_environment.json
-          d: ./test_data.json
+          iteration-data: ./test_data.json
