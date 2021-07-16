@@ -29,7 +29,12 @@
 |n   | number of interation count (optional as it will run all by default)|
 |r   | reporting tag|
 
-* This run command wont show anything in console but will create a new folder named as "Newman" at root directory and a file with latest timestamp.
+* This run command won't show anything in console but will create a new folder named as "Newman" at root directory and a file with latest timestamp.
+
+## Setup Circle CI Pipeline
+* To setup the the pipeline and Testing an API collection with Postman, please follow: https://circleci.com/blog/testing-an-api-with-postman/?utm_medium=SEM&utm_source=gnb&utm_campaign=SEM-gb-DSA-Eng-japac&utm_content=&utm_term=dynamicSearch-&gclid=CjwKCAjwlrqHBhByEiwAnLmYUFyGarIN63uSMPe-oLKLGt9AiPB1f4oF6csbjoLxckP5PocYIBkoKxoCl5gQAvD_BwE
+* To create config.yml for Setting up a CircleCI pipeline to run a Postman collection using the Newman orb, please follow: https://circleci.com/blog/set-up-a-circleci-pipeline-to-run-a-postman-collection-using-the-newman-orb/
+
 ## Sample API Test Scenarios
     
     1. Call End point to get Weather details with respect to LOCATION (Lat, Log) 
@@ -37,4 +42,5 @@
 
 ## Note
 * For future update, export of updated collection('s) is mandatory.
+* Important Reference: https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/
    
